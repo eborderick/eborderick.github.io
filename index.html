@@ -31,6 +31,13 @@
             padding: 25px;
             border-radius: 8px;
         }
+        .profile-image-wrapper {
+            text-align: center; 
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
         .profile-image {
             width: 160px;
             height: 160px;
@@ -44,10 +51,24 @@
             font-size: 1rem;
             color: #2C2C2C;
         }
-        .profile-text p { margin-top: 0; }
+        .profile-text p { margin-top: 0; margin-bottom: 16px; }
         .profile-text p:last-child { margin-bottom: 0; }
-        @media(min-width: 600px) {
-            .profile-container { flex-direction: row; align-items: center; }
+        
+        /* Desktop Responsiveness Fix */
+        @media(min-width: 650px) {
+            .profile-container { 
+                flex-direction: row; 
+                align-items: center; 
+                justify-content: center;
+                padding: 40px;
+            }
+            .profile-image-wrapper {
+                width: 180px; 
+                margin-right: 10px;
+            }
+            .profile-text {
+                font-size: 1.05rem; 
+            }
         }
         
         /* Premium Branded Call-To-Action Button */
@@ -66,13 +87,15 @@
 <body>
 
     <div class="container">
+        <!-- 1. TITLE & TAGLINE -->
         <h1>Equine Analytics Hub</h1>
         <p class="tagline">Data-Driven Decision Making for Horse Owners</p>
         
+        <!-- 2. PROFESSIONAL QA & ANALYTICS PROFILE SECTION -->
         <div class="profile-container">
-            <div style="text-align: center; flex-shrink: 0;">
+            <div class="profile-image-wrapper">
                 <img src="me-and-sox.jpg" alt="Eloise and Sox" class="profile-image">
-                <div style="font-size: 0.8rem; font-style: italic; color: #5A5A5A; margin-top: 8px;">Eloise & Sox — The inspiration behind the data.</div>
+                <div style="font-size: 0.8rem; font-style: italic; color: #5A5A5A; margin-top: 8px; text-align: center;">Eloise & Sox — The inspiration behind the data.</div>
             </div>
             
             <div class="profile-text">
@@ -81,17 +104,20 @@
             </div>
         </div>
         
+        <!-- 3. LIVE APP LINK -->
         <div class="cta-box">
             <h3>Equi-Weather Safety Metrics</h3>
             <p>Enter your location to pull live meteorological data and instantly calculate precise thermal risk thresholds tailored to your horse's breed, coat dynamics, and underlying health profiles.</p>
             <a href="https://equi-weather-safety-metrics.streamlit.app/" class="cta-btn" target="_blank">Launch Live Safety Calculator →</a>
         </div>
 
+        <!-- 4. MORE COMING SOON SPACE -->
         <div class="coming-soon-box">
             <h4>More Analytics Tools Coming Soon</h4>
             <p>New data-driven modules focusing on equine metrics are currently in the pipeline.</p>
         </div>
         
+        <!-- 5. FOOTER -->
         <div style="text-align: center; margin-top: 60px; padding-top: 20px; border-top: 1px solid #D98C5F; font-size: 0.85rem; opacity: 0.8;">
             <p>&copy; 2026 Eloise Borderick / Equine Analytics Hub. All Rights Reserved.</p>
             <p style="font-size: 0.8rem; margin-top: 10px;">
