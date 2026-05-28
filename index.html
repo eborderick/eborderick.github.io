@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>Equine Analytics Hub | Digital Tools for Horse Care & Welfare</title>
-    <meta name="description" content="Data-driven web tools for horse owners. Featuring the Free Equine Heat Index Calculator with live UK weather integration and upcoming equine welfare applications.">
-    <meta name="keywords" content="equine analytics, equine heat index chart, too hot to ride horse, horse management apps, equine bio-thermal analytics">
+    <meta name="description" content="Data-driven web applications designed for modern horse owners. Built by Eloise Borderick to simplify management and elevate equine welfare standards.">
+    <meta name="keywords" content="equine analytics, horse management apps, equine streamlit tool, horse welfare calculator">
     <meta name="google-site-verification" content="TB5hJP4HXdd8_dUZ5Gtl5lYDOzoEYlum5SrkacgQ5Xw" />
 
     <meta property="og:title" content="Equine Analytics Hub | Digital Tools for Horse Care" />
@@ -16,103 +16,52 @@
     
     <style>
         body { font-family: 'Inter', system-ui, sans-serif; background-color: #EAD9C8; color: #2C2C2C; line-height: 1.6; margin: 0; padding: 0; }
-        .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+        .container { max-width: 700px; margin: 0 auto; padding: 60px 20px; }
         h1 { color: #A6512D; font-size: 2.5rem; text-align: center; margin-bottom: 10px; }
-        h2 { color: #A6512D; border-bottom: 2px solid #D98C5F; padding-bottom: 5px; margin-top: 40px; }
         .tagline { text-align: center; font-style: italic; color: #6F8A73; font-weight: bold; margin-bottom: 40px; }
         
-        /* App Grid Layout */
-        .app-grid { display: grid; grid-template-columns: 1fr; gap: 20px; margin: 30px 0; }
-        @media(min-width: 768px) { .app-grid { grid-template-columns: 1fr 1fr; } .full-width { grid-column: span 2; } }
-
-        /* Card Styles */
-        .app-card { background-color: #f4f6f4; border-top: 6px solid #6F8A73; padding: 25px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); display: flex; flex-direction: column; justify-content: space-between; }
-        .app-card.featured { border-top: 6px solid #A6512D; background-color: #fcfdfc; }
-        .app-card h3 { margin-top: 0; color: #2C2C2C; font-size: 1.4rem; }
-        .app-card p { font-size: 0.95rem; color: #4A4A4A; flex-grow: 1; }
+        .intro-section { margin-bottom: 40px; text-align: center; font-size: 1.1rem; color: #3A3A3A; }
         
-        /* Status Badges */
-        .badge { display: inline-block; padding: 3px 8px; font-size: 0.75rem; font-weight: bold; border-radius: 4px; text-transform: uppercase; margin-bottom: 10px; align-self: flex-start; }
-        .badge.live { background-color: #6F8A73; color: white; }
-        .badge.upcoming { background-color: #D98C5F; color: white; border: none; }
-
-        /* Premium Buttons */
-        .cta-btn { background-color: #A6512D; color: white !important; text-decoration: none; padding: 12px 24px; font-size: 1rem; font-weight: bold; border-radius: 6px; display: inline-block; text-align: center; transition: background 0.2s; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-top: 15px; }
+        /* Premium Branded Call-To-Action Button */
+        .cta-box { text-align: center; background-color: #f4f6f4; border-left: 6px solid #A6512D; padding: 35px 25px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin: 30px 0; }
+        .cta-box h3 { margin-top: 0; color: #2C2C2C; font-size: 1.4rem; }
+        .cta-box p { font-size: 1rem; color: #4A4A4A; margin-bottom: 25px; }
+        .cta-btn { background-color: #A6512D; color: white !important; text-decoration: none; padding: 15px 30px; font-size: 1.1rem; font-weight: bold; border-radius: 6px; display: inline-block; transition: background 0.2s; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
         .cta-btn:hover { background-color: #D98C5F; }
-        .disabled-btn { background-color: #dcdedd; color: #888888 !important; cursor: not-allowed; text-shadow: none; box-shadow: none; }
         
-        ul { padding-left: 20px; }
-        li { margin-bottom: 10px; }
+        /* Coming Soon Spacer */
+        .coming-soon-box { text-align: center; padding: 40px 20px; border: 2px dashed #6F8A73; border-radius: 8px; margin-top: 40px; }
+        .coming-soon-box h4 { margin: 0; color: #6F8A73; font-size: 1.2rem; letter-spacing: 1px; text-transform: uppercase; }
+        .coming-soon-box p { margin: 10px 0 0 0; font-size: 0.95rem; color: #5A5A5A; }
     </style>
 </head>
 <body>
 
     <div class="container">
+        <!-- 1. TITLE & TAGLINE -->
         <h1>Equine Analytics Hub</h1>
-        <p class="tagline">Data-Driven Decision Making & Practical Web Tools for Horse Owners</p>
+        <p class="tagline">Data-Driven Decision Making for Horse Owners</p>
         
-        <h2>Available & Upcoming Applications</h2>
-        <div class="app-grid">
-            
-            <!-- FEATURED LIVE APP: HEAT SAFETY CALCULATOR -->
-            <div class="app-card featured full-width">
-                <div>
-                    <span class="badge live">Live Now</span>
-                    <h3>Equine Heat Safety Analytics Platform</h3>
-                    <p>Protect your horse from metabolic heat stress. Enter your UK location to pull live meteorological data and instantly cross-reference it against your horse's specific physiological markers—including breed morphology, coat dynamics, and Cushing's disease (PPID) risk factors.</p>
-                </div>
-                <a href="https://equine-heat-safety.streamlit.app/" class="cta-btn" target="_blank">Launch Live Safety Calculator →</a>
-            </div>
-
-            <!-- ANONYMOUS APP PLACEHOLDER 1 -->
-            <div class="app-card">
-                <div>
-                    <span class="badge upcoming">In Development</span>
-                    <h3>Equine Web Application — Suite 02</h3>
-                    <p>A brand new data-driven management tool currently in design and development phases. Built to help horse owners streamline care patterns and maximize horse welfare parameters.</p>
-                </div>
-                <a href="#" class="cta-btn disabled-btn" onclick="return false;">Coming Soon</a>
-            </div>
-
-            <!-- ANONYMOUS APP PLACEHOLDER 2 -->
-            <div class="app-card">
-                <div>
-                    <span class="badge upcoming">Planning Stage</span>
-                    <h3>Equine Web Application — Suite 03</h3>
-                    <p>Future evidence-based tracking module focusing on performance analytics, physical care metrics, or everyday equestrian facility logs.</p>
-                </div>
-                <a href="#" class="cta-btn disabled-btn" onclick="return false;">Coming Soon</a>
-            </div>
-
-        </div>
-
-        <h2>When is it too hot to ride a horse?</h2>
-        <p>Unlike humans, equines carry a massive muscle-to-surface-area ratio, meaning they trap internal metabolic heat exponentially faster than we do. Relying on a standard smartphone weather app is dangerous because ambient air temperature doesn't account for relative humidity or solar radiation load on a dark coat profile.</p>
-
-        <h2>Key Equine Thermodynamic Risk Factors</h2>
-        <ul>
-            <li><strong>Morphology & Breed:</strong> Heavy cobs and traditional draft breeds retain deep core tissue heat significantly longer than lighter riding horses.</li>
-            <li><strong>Coat Pigmentation:</strong> Dark coat colors (Black, Dark Bay) absorb radiant solar energy rapidly, increasing systemic stress in unshaded arenas.</li>
-            <li><strong>Pathological Vulnerabilities:</strong> Conditions like Cushing's Disease (PPID), Equine Asthma, or an inability to sweat (Anhidrosis) can eliminate a horse's baseline thermoregulatory defense system.</li>
-        </ul>
-
-        <h2>Understanding the Veterinary Heat Index Matrix</h2>
-        <p>Our flagship tool instantly calculates regional wet-bulb humidity burdens and applies clinical adjustments aligned with guidelines from the Federation Equestre Internationale (FEI). Always ensure your horse has unrestricted access to clean water post-exercise and monitor respiratory bounce-back times closely.</p>
-
-        <h2>Equine Care & Analytics FAQs</h2>
-        <div style="margin-top: 20px;">
-            <p><strong>Q: What temperature is too hot to ride a horse?</strong><br>
-            A: While 25°C is generally considered the threshold where a horse's thermoneutral zone ends, air temperature alone is misleading. You must combine the temperature in Fahrenheit with the relative humidity percentage. If the combined sum crosses 130, you must use caution; if it crosses 150, reduce workload significantly; and if it crosses 180, training should be completely abandoned.</p>
-    
-            <p><strong>Q: How do humidity levels affect a sweating horse?</strong><br>
-            A: When UK relative humidity spikes above 50%, the air is too saturated to efficiently evaporate the horse's sweat. This traps heat inside the major locomotive muscles, forcing the heart rate to accelerate rapidly even during light collection intervals.</p>
-
-            <p><strong>Q: Can horses with Cushing's Disease (PPID) cope in a heatwave?</strong><br>
-            A: Horses with Cushing's or PPID are at an extreme disadvantage because hypertrichosis (a thick, unshed coat) acts as a heavy insulation blanket. This completely blocks ambient wind cooling, making an automated multi-variable safety tracker essential for managing their management plans.</p>
+        <!-- 2. ABOUT / PROJECT DESCRIPTION -->
+        <div class="intro-section">
+            <p>Welcome! I design and build lightweight, evidence-based web tools specifically engineered to support equine welfare and simplify daily horse management. By combining data science with practical husbandry, these applications aim to take the guesswork out of critical care decisions.</p>
         </div>
         
-        <!-- COPYRIGHT FOOTER SECTION -->
-        <div style="text-align: center; margin-top: 50px; padding-top: 20px; border-top: 1px solid #D98C5F; font-size: 0.85rem; opacity: 0.8;">
+        <!-- 3. LIVE APP LINK -->
+        <div class="cta-box">
+            <h3>Equine Heat Safety Analytics Platform</h3>
+            <p>Enter your UK location to pull live meteorological data and instantly calculate precise thermal risk thresholds tailored to your horse's breed, coat dynamics, and underlying health profiles.</p>
+            <a href="https://equine-heat-safety.streamlit.app/" class="cta-btn" target="_blank">Launch Live Safety Calculator →</a>
+        </div>
+
+        <!-- 4. MORE COMING SOON SPACE -->
+        <div class="coming-soon-box">
+            <h4>More Analytics Tools Coming Soon</h4>
+            <p>New data-driven modules focusing on tracking, performance, and physical equine care metrics are currently in the pipeline.</p>
+        </div>
+        
+        <!-- 5. FOOTER -->
+        <div style="text-align: center; margin-top: 60px; padding-top: 20px; border-top: 1px solid #D98C5F; font-size: 0.85rem; opacity: 0.8;">
             <p>&copy; 2026 Eloise Borderick / Equine Analytics Hub. All Rights Reserved.</p>
             <p style="font-size: 0.8rem; margin-top: 10px;">
                 <a href="https://linktr.ee/ehborders" target="_blank" style="color: #A6512D; font-weight: bold; text-decoration: none; border-bottom: 1px dashed #A6512D;">
